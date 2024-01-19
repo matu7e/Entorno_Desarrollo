@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../img/icono.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+
+
+  <link rel="stylesheet" href="../Estilos/Log-Reg.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  <!-- Librería para obtener los ojitos de los campos de contraseñas -->
+</head>
+
+
+
+
+<body>
+  <div class="container">
+    <h2>Registro</h2>
+
+
+    <form id="registerForm">
+
+
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" autocomplete="off" required \
+             pattern="[a-zA-Zá-úÁ-Úä-üÄ-ÜñÑ\s]+" \
+             minlength="4" maxlength="16" placeholder="Nicolás">
+
+      <!-- Esto es el div para mostrar el mensaje de error -->
+      <div id="errorName" class="error-message"></div>
+
+
+      <label for="surname">Apellido:</label>
+      <input type="text" id="surname" autocomplete="off" required \
+             pattern="[a-zA-Zá-úÁ-Úä-üÄ-ÜñÑ\s]+" \
+             minlength="4" maxlength="16" placeholder="Pérez">
+
+      <div id="errorSurname" class="error-message"></div>
+
+
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" autocomplete="off" required \
+             pattern="[0-9]+" minlength="6" maxlength="12" placeholder="351464646">
+
+      <div id="errorTelefono" class="error-message"></div>
+
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" autocomplete="off" \
+             placeholder="example@mail.com" \
+             pattern="[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}" required>
+
+      <div id="errorEmail" class="error-message"></div>
+
+
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" autocomplete="off" required \
+             pattern="[A-Za-z0-9¡!#$%&¿?\s]+" minlength="8" maxlength="16" \
+             title="Sólo letras, números, espacios en blanco y los siguientes símbolos: ¡!#$%&¿?">
+      <span id="togglePassword" onclick="togglePasswordVisibility('password', 'togglePassword')">
+        <i class="ojo_abierto fa fa-eye"></i>
+      </span>
+
+
+      <label for="password">Repetir contraseña:</label>
+      <input type="password" id="rep_password" autocomplete="off" required>
+      <span id="rep_togglePassword" onclick="togglePasswordVisibility('rep_password', 'rep_togglePassword')">
+        <i class="ojo_abierto fa fa-eye"></i>
+      </span>
+
+
+
+      <button type="submit">Registrarse</button>
+      <a href="login.html" id="loginLink">Inicia sesión aquí</a>
+
+    </form>
+  </div>
+
+
+
+
+  <script src="../js/Log-Reg.js"></script>
+  <!-- Se eliminó el enlace que iba aquí a los scripts que hacían al funcionamiento
+  para seleccionar la sucursal -->
+
+</body>
+</html>
