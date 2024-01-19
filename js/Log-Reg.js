@@ -1,3 +1,4 @@
+/*
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
 const registerLink = document.getElementById('registerLink');
@@ -61,7 +62,7 @@ forgotPasswordLink.addEventListener('click', (e) => {
   });
   
   // ... Resto del código ...
-
+*/
 
 
 
