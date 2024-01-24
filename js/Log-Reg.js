@@ -86,65 +86,82 @@ forgotPasswordLink.addEventListener('click', (e) => {
 
 // CODIGOS PARA LANZAR AVISO DE ERROR EN CASO DE INTRODUCIRSE ALGUN
 // CARACTER NO PERMITIDO
-var errorName = document.getElementById('errorName');
-
-// Agregar un listener al primer campo de texto
-document.getElementById('name').addEventListener('input', function() {
-  // Obtener el valor del campo
-  var valorCampo = this.value;
-
-  // Verificar si el valor contiene un carácter no permitido
-  if (/[^a-zA-Zá-úÁ-Úä-üÄ-ÜñÑ\s]/.test(valorCampo)) {
-    // Mostrar un mensaje de error
-    errorName.textContent = 'Sólo 4 a 16 letras mayúsculas, minúsculas, con acento o con diéresis';
-  } else {
-    // Limpiar el mensaje de error si el valor es válido
-    errorName.textContent = '';
-  }
-});
 
 
+// Lanzamos la acción sólo si existe el elemento con id específico
+if (document.getElementById("name")) {  // Seleccionamos el elemento por su id
+                                        // y verificamos si existe
 
+  // Aquí comienza la acción para generar el aviso de error
+  var errorName = document.getElementById('errorName');
 
-var errorSurname = document.getElementById('errorSurname');
+  // Agregar un listener al primer campo de texto
+  document.getElementById('name').addEventListener('input', function() {
+    // Obtener el valor del campo
+    var valorCampo = this.value;
 
-document.getElementById('surname').addEventListener('input', function() {
-  var valorCampo = this.value;
-
-  if (/[^a-zA-Zá-úÁ-Úä-üÄ-ÜñÑ\s]/.test(valorCampo)) {
-    errorSurname.textContent = 'Sólo 4 a 16 letras mayúsculas, minúsculas, con acento o con diéresis';
-  } else {
-    errorSurname.textContent = '';
-  }
-});
+    // Verificar si el valor contiene un carácter no permitido
+    if (/[^a-zA-Zá-úÁ-Úä-üÄ-ÜñÑ\s]/.test(valorCampo)) {
+      // Mostrar un mensaje de error
+      errorName.textContent = 'Sólo 4 a 16 letras mayúsculas, minúsculas, con acento o con diéresis';
+    } else {
+      // Limpiar el mensaje de error si el valor es válido
+      errorName.textContent = '';
+    }
+  });
+}
 
 
 
-var errorTelefono = document.getElementById('errorTelefono');
 
-document.getElementById('telefono').addEventListener('input', function() {
-  var valorCampo = this.value;
+if (document.getElementById("surname")) {
+  var errorSurname = document.getElementById('errorSurname');
 
-  if (/[^0-9]/.test(valorCampo)) {
-    errorTelefono.textContent = 'Sólo 6 a 12 números del cero al nueve';
-  } else {
-    errorTelefono.textContent = '';
-  }
-});
+  document.getElementById('surname').addEventListener('input', function() {
+    var valorCampo = this.value;
+
+    if (/[^a-zA-Zá-úÁ-Úä-üÄ-ÜñÑ\s]/.test(valorCampo)) {
+      errorSurname.textContent = 'Sólo 4 a 16 letras mayúsculas, minúsculas, con acento o con diéresis';
+    } else {
+      errorSurname.textContent = '';
+    }
+  });
+}
 
 
 
-var errorEmail = document.getElementById('errorEmail');
 
-document.getElementById('email').addEventListener('input', function() {
-  var valorCampo = this.value;
+if (document.getElementById("telefono")) {
+  var errorTelefono = document.getElementById('errorTelefono');
 
-  if (/[^a-zA-Z0-9-@._]/.test(valorCampo)) {
-    errorEmail.textContent = 'Sólo letras, números, puntos, guión y guión bajo';
-  } else {
-    errorEmail.textContent = '';
-  }
-});
+  document.getElementById('telefono').addEventListener('input', function() {
+    var valorCampo = this.value;
+
+    if (/[^0-9]/.test(valorCampo)) {
+      errorTelefono.textContent = 'Sólo 6 a 12 números del cero al nueve';
+    } else {
+      errorTelefono.textContent = '';
+    }
+  });
+}
+
+
+
+
+if (document.getElementById("email")) {
+  var errorEmail = document.getElementById('errorEmail');
+
+  document.getElementById('email').addEventListener('input', function() {
+    var valorCampo = this.value;
+
+    if (/[^a-zA-Z0-9-@._]/.test(valorCampo)) {
+      errorEmail.textContent = 'Sólo letras, números, puntos, guión y guión bajo';
+    } else {
+      errorEmail.textContent = '';
+    }
+  });
+}
+
 
 
 
@@ -193,13 +210,3 @@ function validarContrasIguales() {
   // Envía el formulario si las contraseñas coinciden
   return true;
 }
-
-
-
-
-
-
-
-
-
-
